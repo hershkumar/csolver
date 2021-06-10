@@ -15,7 +15,24 @@ csolver takes 3 commandline arguments, the first being the input csv file with t
 ```bash
 python3 csolver.py examples/2input.csv 8 examples/2output.txt
 ```
+This produces the output in `examples/2output.txt`:
+```
+|i> -X-----o--o----------
+|i> ----X--o--|--o--o----
+|a> -X-----X--o--o--|----
+|a> -X--------X--o--|--o-
+|a> -X-----------X--|--o-
+|o> ----------------X--|-
+|o> -------------------X-
 
+
+===Gate Counts====
+NOT gates: 5
+CCNOT gates: 3
+CCCNOT gates: 1
+CNOT gates: 1
+
+```
 # Methodology
 csolver encodes the possible existence of a circuit that fulfils the truth table as a SAT problem, which can then be solved via the Z3 SAT solver. This is done via the addition of constraints to the SAT problem. There are sets of variables that need to be tracked in order to encode the existence of a circuit:
 
