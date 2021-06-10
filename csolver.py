@@ -5,7 +5,7 @@
 # Output of the program has also been beautified,
 # making it easier to generate the circuit from output.
 # The circuit finder uses ancillary qubits/bits, and thus provides a
-# circuit that satisfies the table, not a simplfied circuit
+# circuit that satisfies the table, not a simplified circuit
 # using minimal qubits/bits or gates.
 # The finder uses the Microsoft Z3 SMT solver to solve the SAT
 # problem.
@@ -184,9 +184,7 @@ def draw_circ(infile, outfile, num_in, num_out):
 
     # do the diagonal
     for i in range(n):
-        for j in range(n):
-            if (i==j):
-                circ[i][j] = NOT_GATE
+        circ[i][i] = NOT_GATE
 
 
     # and now the control dots
